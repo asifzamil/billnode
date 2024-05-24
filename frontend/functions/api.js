@@ -8,7 +8,7 @@ const router = express.Router();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-router.post('/submit', async (req, res) => {
+router.post('/bill-details', async (req, res) => {
   const refNo = req.body.refNo;
   const url = `https://bill.pitc.com.pk/gepcobill/general?refno=${refNo}`;
 
