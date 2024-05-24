@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bill Details</title>
+</head>
+<body>
+  <h1>Bill Details</h1>
+  <div id="bill-details"></div>
+  <a href="/">Go back</a>
+
+  <script>
+    // Assuming the bill details are passed as query parameters
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('bill-details').innerHTML = `
+      <p>Name: ${params.get('name')}</p>
+      <p>Amount: ${params.get('amount')}</p>
+      <p>Due Date: ${params.get('dueDate')}</p>
+      <p>Due Amount: ${params.get('damount')}</p>
+      <div>${params.get('fullHTML')}</div>
+    `;
+  </script>
+</body>
+</html>
